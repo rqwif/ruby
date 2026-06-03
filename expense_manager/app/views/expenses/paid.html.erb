@@ -1,0 +1,9 @@
+<h1>Оплачені витрати</h1>
+
+<% @expenses.each do |expense| %>
+  <p>
+    <%= expense.title %>
+    -
+    <%= expense.amount %>
+  </p>
+<% end %>

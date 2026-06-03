@@ -1,0 +1,23 @@
+<h1>Витрати цього місяця</h1>
+
+<table class="table table-striped">
+
+  <tr>
+    <th>Назва</th>
+    <th>Сума</th>
+    <th>Дата</th>
+  </tr>
+
+  <% @expenses.each do |expense| %>
+    <tr>
+      <td><%= expense.title %></td>
+
+      <td>
+        <%= amount_badge(expense) %>
+      </td>
+
+      <td><%= expense.date %></td>
+    </tr>
+  <% end %>
+
+</table>

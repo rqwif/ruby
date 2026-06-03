@@ -1,0 +1,32 @@
+<h1>Витрати</h1>
+
+<%= link_to "Нова витрата", new_expense_path %> |
+<%= link_to "Категорії", categories_path %> |
+<%= link_to "Оплачені", paid_expenses_path %>
+
+<table border="1">
+  <tr>
+    <th>Назва</th>
+    <th>Категорія</th>
+    <th>Сума</th>
+    <th>Статус</th>
+    <th>Дії</th>
+  </tr>
+
+  <% @expenses.each do |e| %>
+    <tr>
+      <td><%= e.title %></td>
+      <td><%= e.category %></td>
+      <td><%= e.amount %></td>
+      <td><%= e.status %></td>
+
+      <td>
+        <%= link_to "Показати", e %>
+        <%= link_to "Редагувати", edit_expense_path(e) %>
+
+        <%= link_to "Видалити", e,
+            data: { turbo_method: :delete, turbo_confirm: "Видалити?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

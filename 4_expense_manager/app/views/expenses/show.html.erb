@@ -1,0 +1,39 @@
+<h1>Витрата</h1>
+
+<p>
+  <strong>Назва:</strong>
+  <%= @expense.title %>
+</p>
+
+<p>
+  <strong>Категорія:</strong>
+  <%= @expense.category %>
+</p>
+
+<p>
+  <strong>Сума:</strong>
+  <%= amount_badge(@expense) %>
+</p>
+
+<p>
+  <strong>Дата:</strong>
+  <%= @expense.date %>
+</p>
+
+<p>
+  <strong>Оплата:</strong>
+  <%= @expense.payment_method %>
+</p>
+
+<p>
+  <strong>Статус:</strong>
+  <%= @expense.status %>
+</p>
+
+<p>
+  <strong>Примітка:</strong>
+  <%= @expense.notes %>
+</p>
+
+<%= link_to "Редагувати", edit_expense_path(@expense) %> |
+<%= link_to "Назад", expenses_path %>

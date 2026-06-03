@@ -1,0 +1,46 @@
+<%= form_with model: @expense do |f| %>
+
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :category, class: "form-label" %>
+    <%= f.select :category,
+                 Category.pluck(:name),
+                 {},
+                 class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :amount, class: "form-label" %>
+    <%= f.number_field :amount, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :date, class: "form-label" %>
+    <%= f.date_field :date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :payment_method, class: "form-label" %>
+    <%= f.text_field :payment_method, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :status, class: "form-label" %>
+    <%= f.select :status,
+                 Expense.statuses.keys,
+                 {},
+                 class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :notes, class: "form-label" %>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+
+<% end %>
